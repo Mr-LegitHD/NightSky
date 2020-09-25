@@ -1,0 +1,2 @@
+# NightSky
+Discord Bot
