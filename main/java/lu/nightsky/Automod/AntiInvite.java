@@ -12,6 +12,7 @@ public class AntiInvite extends ListenerAdapter {
         if(message.toLowerCase().contains("https://discord.gg/")) {
             event.getMessage().delete().queue();
         }
+        event.getGuild();
 
     }
 }
