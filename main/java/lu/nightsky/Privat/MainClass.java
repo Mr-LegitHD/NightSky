@@ -1,6 +1,7 @@
 package lu.nightsky.Privat;
 
 import lu.nightsky.AdminStuff.Embed;
+import lu.nightsky.AdminStuff.Voting;
 import lu.nightsky.Automod.AntiInvite;
 import lu.nightsky.Automod.Blacklist;
 import lu.nightsky.BotEvents.GuildJoin;
@@ -31,7 +32,7 @@ public class MainClass {
 
 
     public static void main(final String[] args) throws LoginException {
-        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKENTest);
+        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
 
 
         builder.setAutoReconnect(true);
@@ -93,7 +94,8 @@ public class MainClass {
         builder.addEventListeners(new Loveship());
         builder.addEventListeners(new Instagram());
         builder.addEventListeners(new NightSkyUser());
-        builder.addEventListeners(new Couting());
+        // builder.addEventListeners(new Couting());
+        builder.addEventListeners(new Voting());
        // builder.addEventListeners(new Volume());
         builder.build();
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Listener Loading Successful ✔️");

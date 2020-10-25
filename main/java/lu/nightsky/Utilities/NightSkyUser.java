@@ -19,8 +19,6 @@ public class NightSkyUser extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
-        if (!event.getAuthor().isBot()) {
-            if(!event.getAuthor().getId().equals("750768307333890178")) return;
                 String[] args = event.getMessage().getContentRaw().split("\\s+");
                 if (args[0].equalsIgnoreCase(Secrets.prefix + "nightskyuser")) {
 
@@ -34,11 +32,11 @@ public class NightSkyUser extends ListenerAdapter {
                         member.getGuild().addRoleToMember(member, role).queue((unused) -> {
                         });
                     }
-                    event.getGuild().getTextChannelById("752825347866624021").sendMessage("Added "+args[1]+" as @NightSky User").queue();
+                    event.getChannel().sendMessage("Added "+args[1]+" as @NightSky User").queue();
                     System.out.println(dateFormat.format(newDate) + " Command +nightskyuser got used by " + event.getAuthor().getName());
 
                 }
-        }
+
     }
 }
 

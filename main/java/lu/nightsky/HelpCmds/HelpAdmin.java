@@ -32,6 +32,7 @@ public class HelpAdmin extends ListenerAdapter {
                 info.setTitle("\uD83D\uDCAD NightSky | Admin Commands");
                 info.addField("**+embed:** ", "Send embeds | +embed <Title> <Text>", false);
                 info.addField("**+say:** ", "Send a Message (no Embed)", false);
+                info.addField("**+voting:** ", "Start a Voting on your Server", false);
                 info.setColor(Color.blue);
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                 event.getChannel().sendMessage(info.build()).queue();
