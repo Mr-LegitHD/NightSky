@@ -14,12 +14,16 @@ import java.util.Date;
 
 public class HelpMod extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-        if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) return;
         String[] args = event.getMessage().getContentRaw().split(" ");
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
         if (args[0].equalsIgnoreCase(Secrets.prefix + "mod")) {
             if (args[1].equalsIgnoreCase("help")) {
+                if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) {
+                    event.getChannel().sendMessage("You need the `Manage Messages` permission to use this command").queue();
+
+                    return;
+                }
                 User user = event.getAuthor();
 
 

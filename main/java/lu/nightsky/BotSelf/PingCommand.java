@@ -1,4 +1,4 @@
-package lu.nightsky.Utilities;
+package lu.nightsky.BotSelf;
 
 import lu.nightsky.Privat.Secrets;
 import net.dv8tion.jda.api.EmbedBuilder;

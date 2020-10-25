@@ -30,13 +30,14 @@ public class Serverinfo extends ListenerAdapter {
             info.setTitle("\uD83D\uDCAD NightSky | Serverinfo");
             info.addField("**Name:** ",guild.getName(), false);
             info.addField("**Owner:** ",guild.getOwner().getUser().getAsTag(), false);
-            info.addField("**Server-ID:** ",guild.getId(), false);
+            info.addField("**ID:** ",guild.getId(), true);
             info.addField("**Region:** ",guild.getRegion().getName(), false);
-            info.addField("**Servermembers:** ",guild.getMemberCount() + " ", false);
+            info.addField("**Members:** ",guild.getMemberCount() + " ", false);
             info.addField("**Categories:** ", String.valueOf(guild.getCategories().size()), false);
             info.addField("**Channels**: ", String.valueOf(guild.getChannels().size()), false);
             info.addField("**Roles:** ", String.valueOf(guild.getRoles().size()), false);
             info.addField("**Boostercount:** ", String.valueOf(guild.getBoostCount()), false);
+            info.addField("**Verification Level:** ", String.valueOf(guild.getVerificationLevel()), false);
             info.addField("**Created at:** ", guild.getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             info.setColor(Color.yellow);

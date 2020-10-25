@@ -4,6 +4,7 @@ import lu.nightsky.Privat.Secrets;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -24,12 +25,14 @@ public class InfosCommand extends ListenerAdapter {
             users = users + guild.getMemberCount();
         }
         final int serverUsers = users;
-
+        Member selfMember = event.getGuild().getSelfMember();
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
+
         if (args[0].equalsIgnoreCase(Secrets.prefix + "infos")) {
             User user = event.getAuthor();
+
             //Embed Builder
             EmbedBuilder info = new EmbedBuilder();
             info.setTitle("\uD83D\uDCAD NightSky | Informations");

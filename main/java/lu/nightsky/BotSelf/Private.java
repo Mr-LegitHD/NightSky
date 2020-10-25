@@ -1,4 +1,4 @@
-package lu.nightsky.Privat;
+package lu.nightsky.BotSelf;
 
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.ReadyEvent;

@@ -1,4 +1,4 @@
-package lu.nightsky.Utilities;
+package lu.nightsky.Fun;
 
 import java.awt.Color;
 import java.text.DateFormat;
@@ -14,7 +14,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class GoogleSearch extends ListenerAdapter {
 
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-        if (!event.getAuthor().isBot()) {
+        if (event.getAuthor().isBot()) return;
             String[] args = event.getMessage().getContentRaw().split(" ");
             DateFormat dateFormat = new SimpleDateFormat("[H:m]");
             Date newDate = new Date();
@@ -23,6 +23,8 @@ public class GoogleSearch extends ListenerAdapter {
                 String googleSearchUrl = "https://www.google.de/search?q=";
                 String query = String.join("+", (CharSequence[])Arrays.copyOfRange(args, 1, args.length));
                 String result = googleSearchUrl + query;
+
+                //Embedbuilder
                 EmbedBuilder info = new EmbedBuilder();
                 info.setTitle("\ud83d\udcad NightSky | Search");
                 info.setDescription("[" + query + "](" + result + ")");
@@ -34,6 +36,6 @@ public class GoogleSearch extends ListenerAdapter {
                 System.out.println(dateFormat.format(newDate) + " Command +search got used by " + event.getAuthor().getName());
             }
 
-        }
+
     }
 }

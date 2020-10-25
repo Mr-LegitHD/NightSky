@@ -19,15 +19,15 @@ public class Ticket extends ListenerAdapter {
         if (event.getAuthor().isBot()) return;
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         if (args[0].equalsIgnoreCase(Secrets.prefix + "ticket")) {
+
             event.getMessage().delete().queue();
             System.out.println(dateFormat.format(newDate) + " Command +ticket got used by " + event.getAuthor().getName());
             User user = event.getAuthor();
 
             //Send Direct Message
-            user.openPrivateChannel().queue((channel) ->
-        {
-            channel.sendMessage("Hello, as we can see you've found a bug in the Night Sky Bot. Please report it here and you might even get a little reward\n" +
-                    "\nhttps://www.gino-cicci.social/Bugs.html").queue();
+            user.openPrivateChannel().queue((channel) -> {
+            channel.sendMessage("Hello, as I see you've found a bug in the NightSky Bot. Please report it here and you might even get a little reward\n" +
+                    "\nhttps://forms.gle/DbBYHvpkx5qoeUNd8").queue();
         });
         }
     }

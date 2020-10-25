@@ -14,18 +14,22 @@ import java.util.Date;
 
 public class HelpAutoMod extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-        if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) return;
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
         String[] args = event.getMessage().getContentRaw().split(" ");
         if (args[0].equalsIgnoreCase(Secrets.prefix + "automod")) {
             if (args[1].equalsIgnoreCase("help")) {
+                if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) {
+                    event.getChannel().sendMessage("You need the `Manage Messages` permission to use this command").queue();
+
+                    return;
+                }
                 User user = event.getAuthor();
                 //Embed Builder
                 EmbedBuilder info = new EmbedBuilder();
                 info.setTitle("\uD83D\uDCAD NightSky | AutoMod");
-                info.addField("**Anti Invite** ", "Deletes all Discord Server Invites | Enabled", false);
-                info.addField("**Anti Badwords:** ", "Deletes Bad Words from our private Blacklist | Enabled", false);
+                info.addField("**Anti Invite** ", "Deletes all Discord Server Invites from normal Users | Enabled", false);
+                info.addField("**Anti Badwords:** ", "Deletes racist Words | Enabled", false);
                 info.setColor(Color.blue);
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                 event.getChannel().sendMessage(info.build()).queue();

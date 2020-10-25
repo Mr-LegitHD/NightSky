@@ -16,12 +16,16 @@ import java.util.Date;
 
 public class HelpAdmin extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-        if (!event.getMember().hasPermission(Permission.ADMINISTRATOR)) return;
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
         String[] args = event.getMessage().getContentRaw().split(" ");
         if (args[0].equalsIgnoreCase(Secrets.prefix + "admin")) {
             if (args[1].equalsIgnoreCase("help")) {
+                if (!event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
+                    event.getChannel().sendMessage("You need the `Administrator` permission to use this command").queue();
+
+                    return;
+                }
                 User user = event.getAuthor();
                 //Embed Builder
                 EmbedBuilder info = new EmbedBuilder();

@@ -18,6 +18,7 @@ public class HelpInfo extends ListenerAdapter {
         String[] args = event.getMessage().getContentRaw().split(" ");
         if (args[0].equalsIgnoreCase(Secrets.prefix + "info")) {
             if (args[1].equalsIgnoreCase("help")) {
+
                 User user = event.getAuthor();
                 //Embed Builder
                 EmbedBuilder info = new EmbedBuilder();
@@ -26,7 +27,8 @@ public class HelpInfo extends ListenerAdapter {
                 info.addField("**+ping:** ", "Get my Ping", false);
                 info.addField("**+links:** ", "Get some interesting Links", false);
                 info.addField("**+serverinfo:** ", "Get some Informations about the Server", false);
-                info.addField("**+profile:** ", "get some Informations about yourself", false);
+                info.addField("**+profile:** ", "Get some Informations about the mentioned user", false);
+                info.addField("**+uptime:** ", "Get the current Bot uptime", false);
                 info.setFooter("NightSky " + Secrets.version);
                 info.setColor(Color.blue);
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());

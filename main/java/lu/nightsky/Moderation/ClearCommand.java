@@ -17,25 +17,25 @@ import java.util.stream.Collectors;
 public class ClearCommand extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         if (event.getAuthor().isBot()) return;
-        if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) return;
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         if (args[0].equalsIgnoreCase(Secrets.prefix + "clear")) {
+            TextChannel channel = event.getChannel();
+            Member selfMember = event.getGuild().getSelfMember();
+
+
+
+            if (!selfMember.hasPermission(Permission.MESSAGE_MANAGE)) {
+                channel.sendMessage("I need the `Manage Messages` permission for this command").queue();
+
+                return;
+            }
             event.getMessage().delete().queue();
-                TextChannel channel = event.getChannel();
-                Member member = event.getMember();
-                Member selfMember = event.getGuild().getSelfMember();
+            if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) {
+                event.getChannel().sendMessage("You need the `Manage Messages` permission to use this command").queue();
 
-                if (!member.hasPermission(Permission.MESSAGE_MANAGE)) {
-                    channel.sendMessage("You need the `Manage Messages` permission to use this command").queue();
+                return;
+            }
 
-                    return;
-                }
-
-                if (!selfMember.hasPermission(Permission.MESSAGE_MANAGE)) {
-                    channel.sendMessage("I need the `Manage Messages` permission for this command").queue();
-
-                    return;
-                }
 
                 int amount;
                 String arg = args[1];
