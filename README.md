@@ -1,4 +1,4 @@
 # NightSky
-Coded with the JDA API
+Made with the JDA API
 Privat Discord Bot by Mr_Legit HD
 Official Bot Website https://www.universe-network.site/
