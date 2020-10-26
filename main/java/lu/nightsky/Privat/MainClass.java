@@ -94,7 +94,7 @@ public class MainClass {
         builder.addEventListeners(new Loveship());
         builder.addEventListeners(new Instagram());
         builder.addEventListeners(new NightSkyUser());
-        // builder.addEventListeners(new Couting());
+        builder.addEventListeners(new Couting());
         builder.addEventListeners(new Voting());
        // builder.addEventListeners(new Volume());
         builder.build();

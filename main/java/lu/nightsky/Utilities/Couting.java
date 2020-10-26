@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageHistory;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
@@ -11,28 +12,26 @@ import java.util.List;
 
 public class Couting extends ListenerAdapter {
 
-    @Override
-    public void onMessageReceived(@NotNull MessageReceivedEvent event) {
-        TextChannel textChannel = event.getTextChannel();
-        if (!textChannel.getId().equals("769883347601981451")) return;
-        MessageHistory history = new MessageHistory(textChannel);
-        List<Message> msgs = history.retrievePast(1).complete();
-        Message previousMsg = msgs.get(0);
-        String lastMessageAsString = previousMsg.getContentRaw();
-        if (lastMessageAsString.chars().allMatch( Character::isDigit )) {
-            String currentInput = event.getMessage().getContentRaw();
-            if (currentInput.chars().allMatch( Character::isDigit )) {
-                int lastNumber = Integer.parseInt(lastMessageAsString);
-                int inputNumber = Integer.parseInt(currentInput);
+    public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
+        final TextChannel channel = event.getChannel();
+        if (channel.getId().equals("752811330133557298")) {
+            final Message message = event.getMessage();
 
-                if (inputNumber != (lastNumber + 1)) {
-                    event.getMessage().delete().queue();
-                }
-            } else {
-                event.getMessage().delete().queue();
-            }
-        } else {
-            event.getMessage().delete().queue();
+            channel.getHistory().retrievePast(2)
+                    .map(messages -> messages.get(1))
+                    .queue(msg -> {
+                        try {
+                            final int a = Integer.parseInt(message.getContentRaw());
+                            final int b = Integer.parseInt(msg.getContentRaw());
+                            if (message.getAuthor().equals(msg.getAuthor()))
+                                message.delete().queue();
+                            if (a != b + 1)
+                                message.delete().queue();
+                        } catch (NumberFormatException e) {
+                            message.delete().queue();
+                            e.fillInStackTrace();
+                        }
+                    });
         }
     }
 }
