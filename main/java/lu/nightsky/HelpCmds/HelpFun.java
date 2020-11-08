@@ -27,7 +27,6 @@ public class HelpFun extends ListenerAdapter {
                 info.addField("**+joke:** ", "Daily jokes for you", false);
                 info.addField("**+search:** ", "Search something in the web", false);
                 info.addField("**+love:** ", "The love match from 2 Users |+love <Name> <Name>", false);
-                info.addField("**+instagram:** ", "The love match from 2 Users |+instagram <username>", false);
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                 info.setColor(Color.blue);
                 event.getChannel().sendMessage(info.build()).queue();

@@ -25,7 +25,7 @@ public class Userinfo extends ListenerAdapter {
             User user = event.getAuthor();
 
             List<User> mentionedUsers = event.getMessage().getMentionedUsers();
-            System.out.println(dateFormat.format(newDate) +" Profile Command | Mentioned Users: " + mentionedUsers.size());
+            // System.out.println(dateFormat.format(newDate) +" Profile Command | Mentioned Users: " + mentionedUsers.size());
 
             if(mentionedUsers.size() > 0) {
                 User userTarget = mentionedUsers.get(0);
@@ -39,7 +39,6 @@ public class Userinfo extends ListenerAdapter {
                     info.addField("**ID:** ", userTarget.getId(), false);
                     info.addField("**Account Created:** ", userTarget.getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
                     info.addField("**Guild Joined:** ", member.getTimeJoined().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
-                    info.addField("**Status:** ", String.valueOf(member.getOnlineStatus()), false);
                     info.addField("**Hypesquad:** ", String.valueOf(userTarget.getFlags()), false);
                     info.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                     info.setColor(Color.yellow);

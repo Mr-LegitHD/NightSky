@@ -23,7 +23,7 @@ public class Links extends ListenerAdapter {
             //Embed Builder
             EmbedBuilder info = new EmbedBuilder();
             info.setTitle("\uD83D\uDCAD NightSky | Links");
-            info.setDescription("[Support](https://discord.gg/tuynDKj) \n[Invite Bot](https://discord.com/oauth2/authorize?client_id=750778627565682798&scope=bot&permissions=805432464) \n[Vote](https://discordbotlist.com/bots/nightsky-2322) \n[Website](https://www.universe-network.site/) \n[Donate](https://www.tipeeestream.com/mr-legit/donation) \n[Bug Report](https://forms.gle/DbBYHvpkx5qoeUNd8) \n[Twitter](https://twitter.com/NightSkyBot_)");
+            info.setDescription("[Support](https://discord.gg/tuynDKj) \n[Invite Bot](https://discord.com/oauth2/authorize?client_id=750778627565682798&scope=bot&permissions=268463110) \n[Vote](https://discordbotlist.com/bots/nightsky-2322) \n[Website](https://www.universe-network.site/) \n[Donate](https://www.tipeeestream.com/mr-legit/donation) \n[Bug Report](https://forms.gle/DbBYHvpkx5qoeUNd8) \n[Twitter](https://twitter.com/NightSkyBot_)");
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             info.setColor(new Color(240,255,255));
             event.getChannel().sendMessage(info.build()).queue();

@@ -29,6 +29,7 @@ public class HelpInfo extends ListenerAdapter {
                 info.addField("**+serverinfo:** ", "Get some Informations about the Server", false);
                 info.addField("**+profile:** ", "Get some Informations about the mentioned user", false);
                 info.addField("**+uptime:** ", "Get the current Bot uptime", false);
+                info.addField("**+avatar:** ", "Get the tagged User's avatar", false);
                 info.setFooter("NightSky " + Secrets.version);
                 info.setColor(Color.blue);
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());

@@ -70,6 +70,7 @@ public class MuteCommand extends ListenerAdapter {
                     if (!members.isEmpty()) {
                         Member member = (Member) members.get(0);
                         Guild guild = member.getGuild();
+                        event.getGuild().createRole().setName("muted").setPermissions(Permission.EMPTY_PERMISSIONS).queue();
                         Role role = (Role) guild.getRolesByName("muted", true).get(0);
                         member.getGuild().addRoleToMember(member, role).queue((unused) -> {
                         });

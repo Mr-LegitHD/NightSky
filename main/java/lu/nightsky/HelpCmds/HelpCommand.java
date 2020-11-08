@@ -27,8 +27,6 @@ public class HelpCommand extends ListenerAdapter {
             info.addField("**+info help:** ","Display all Informations Commands", false);
             info.addField("**+fun help:** ","Display all Fun Commands", false);
             info.addField("**+admin help:** ","Display all Admin Commands", false);
-            info.addField("**+automod help:** ","Display all Automod features", false);
-            info.addField("**+music help:** ","Display all Musik features", false);
             info.addField("**+vote:** ","Vote for our Bot", false);
             info.addField("**+ticket:** ","Send a Support Ticket if you found a Bug", false);
             info.setColor(Color.blue);
