@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.discordbots.api.client.DiscordBotListAPI;
 
 import javax.annotation.Nonnull;
 import java.text.DateFormat;
@@ -30,6 +31,16 @@ public class StartListener extends ListenerAdapter {
             System.out.println(Secrets.ANSI_BLUE+"- "+ guild.getName()+Secrets.ANSI_RESET);
         }
         final int serverUsers = users;
+        int serverCount = event.getJDA().getGuilds().size();
+
+        //Top.gg
+        DiscordBotListAPI api = new DiscordBotListAPI.Builder()
+                .token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MDc3ODYyNzU2NTY4Mjc5OCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA0OTUzMTkxfQ.mHKD_q2R6SngqRs3Mmcp1N1ymiNEe9YQTOqBtbIAZDY")
+                .botId("750778627565682798")
+                .build();
+        api.setStats(serverCount);
+
+
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         Runnable task = () -> {
             event.getJDA().getPresence().setActivity(Activity.watching(event.getJDA().getGuilds().size() + " guilds | +help"));

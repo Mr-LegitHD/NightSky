@@ -23,14 +23,14 @@ public class Vote extends ListenerAdapter {
 
                 //Embed Builder
                 EmbedBuilder info = new EmbedBuilder();
-                info.setTitle("\uD83D\uDCAD NightSky | Links");
-                info.setDescription("Support us with a [Vote](https://bots.rovelstars.ga/bots/750778627565682798/vote)");
+                info.setTitle("\uD83D\uDCAD NightSky | Vote");
+                info.setDescription("Support us with a [Vote](https://top.gg/bot/750778627565682798/vote)");
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                 info.setColor(new Color(14,24,45));
                 event.getChannel().sendMessage(info.build()).queue();
                 info.clear();
                 event.getMessage().delete().queue();
-                System.out.println(dateFormat.format(newDate) +" Command +links got used by "+ event.getAuthor().getName());
+                System.out.println(dateFormat.format(newDate) +" Command +vote got used by "+ event.getAuthor().getName());
             }
         }
     }
