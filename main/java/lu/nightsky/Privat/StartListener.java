@@ -28,10 +28,9 @@ public class StartListener extends ListenerAdapter {
         int users = 0;
         for (Guild guild : event.getJDA().getGuilds()) {
             users = users + guild.getMemberCount();
-            System.out.println(Secrets.ANSI_BLUE+"- "+ guild.getName()+Secrets.ANSI_RESET);
         }
         final int serverUsers = users;
-        int serverCount = event.getJDA().getGuilds().size();
+         int serverCount = event.getJDA().getGuilds().size();
 
         //Top.gg
         DiscordBotListAPI api = new DiscordBotListAPI.Builder()
@@ -39,6 +38,7 @@ public class StartListener extends ListenerAdapter {
                 .botId("750778627565682798")
                 .build();
         api.setStats(serverCount);
+        System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
 
 
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
@@ -73,17 +73,6 @@ public class StartListener extends ListenerAdapter {
     }
 
 
-    public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        User user = event.getAuthor();
 
-        if (user.isBot() || event.isWebhookMessage()) {
-            return;
-        }
-
-        final long guildId = event.getGuild().getIdLong();
-        String prefix = VeryBadDesign.PREFIXES.computeIfAbsent(guildId, (id) -> Secrets.prefix);
-        String raw = event.getMessage().getContentRaw();
-
-    }
 }
 

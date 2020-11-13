@@ -11,25 +11,28 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Links extends ListenerAdapter {
+public class Hosting extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split("\\s+");
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
         if(event.getAuthor().isBot()) return;
-        if (args[0].equalsIgnoreCase(Secrets.prefix + "links")) {
+        if (args[0].equalsIgnoreCase(Secrets.prefix + "hosting")) {
             User user = event.getAuthor();
 
             //Embed Builder
             EmbedBuilder info = new EmbedBuilder();
-            info.setTitle("\uD83D\uDCAD NightSky | Links");
-            info.setDescription("[Support](https://discord.gg/tuynDKj) \n[Invite Bot](https://discord.com/oauth2/authorize?client_id=750778627565682798&scope=bot&permissions=268463110) \n[Vote](https://top.gg/bot/750778627565682798/vote) \n[Website](https://www.universe-network.site/) \n[Donate](https://www.tipeeestream.com/mr-legit/donation) \n[Bug Report](https://forms.gle/DbBYHvpkx5qoeUNd8) \n[Twitter](https://twitter.com/NightSkyBot_)");
+            info.setTitle("\uD83D\uDCAD NightSky | Hosting");
+            info.addField("**Server**","KVM-1", true);
+            info.addField("**Memory**","2 GB ECC REG RAM", true);
+            info.addField("**CPU**","1x Intel Xeon E5", true);
+            info.addField("**Affilte Link to support us <:cookieboy:775762536128970793> **","[KernelHost](https://www.kernelhost.de/cp/aff.php?aff=9)", true);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
-            info.setColor(new Color(240,255,255));
+            info.setColor(new Color(40,143,235));
             event.getChannel().sendMessage(info.build()).queue();
             info.clear();
             event.getMessage().delete().queue();
-            System.out.println(dateFormat.format(newDate) +" Command +links got used by "+ event.getAuthor().getName());
+            System.out.println(dateFormat.format(newDate) +" Command +hosting got used by "+ event.getAuthor().getName());
         }
     }
 }

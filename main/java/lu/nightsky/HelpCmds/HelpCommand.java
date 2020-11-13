@@ -22,13 +22,14 @@ public class HelpCommand extends ListenerAdapter {
             //Embed Builder
             EmbedBuilder info = new EmbedBuilder();
             info.setTitle("\uD83D\uDCAD NightSky | Help & Commands");
-            info.addField("**+help:** ","List all Commands", false);
-            info.addField("**+mod help:** ","Display all Moderation Commands", false);
-            info.addField("**+info help:** ","Display all Informations Commands", false);
-            info.addField("**+fun help:** ","Display all Fun Commands", false);
-            info.addField("**+admin help:** ","Display all Admin Commands", false);
-            info.addField("**+vote:** ","Vote for our Bot", false);
-            info.addField("**+ticket:** ","Send a Support Ticket if you found a Bug", false);
+            info.addField("**+help** ","List all Commands", false);
+            info.addField("**+mod help** ","Display all Moderation Commands", false);
+            info.addField("**+info help** ","Display all Informations Commands", false);
+            info.addField("**+fun help** ","Display all Fun Commands", false);
+            info.addField("**+admin help** ","Display all Admin Commands", false);
+            info.addField("**+vote** ","Vote for our Bot", false);
+            info.addField("**+hosting** ","Display Informations about the hosting of this Bot", false);
+            info.addField("**+ticket** ","Send a Support Ticket if you found a Bug", false);
             info.setColor(Color.blue);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             event.getChannel().sendMessage(info.build()).queue();

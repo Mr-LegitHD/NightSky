@@ -37,14 +37,14 @@ public class MainClass {
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Token Login valid ✔️");
 
         for (final GatewayIntent gatewayIntent : GatewayIntent.values()) {
-            builder.enableIntents(gatewayIntent, new GatewayIntent[0]);
+            builder.enableIntents(GatewayIntent.GUILD_MEMBERS);
         }
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" GateawayIntent Connected successful ✔️");
 
         //Listeners
+        builder.addEventListeners(new StartListener());
         builder.addEventListeners(new HelpCommand());
         builder.addEventListeners(new PingCommand());
-        builder.addEventListeners(new StartListener());
         builder.addEventListeners(new InfosCommand());
         builder.addEventListeners(new MuteCommand());
         builder.addEventListeners(new HelpMod());
@@ -90,6 +90,7 @@ public class MainClass {
         builder.addEventListeners(new NightSkyUser());
         builder.addEventListeners(new Couting());
         builder.addEventListeners(new Voting());
+        builder.addEventListeners(new Hosting());
        // builder.addEventListeners(new Volume());
         builder.build();
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Listener Loading Successful ✔️");

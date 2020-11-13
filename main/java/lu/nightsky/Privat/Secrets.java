@@ -5,8 +5,7 @@ public class Secrets {
     public static String TOKEN = "NzUwNzc4NjI3NTY1NjgyNzk4.X0_fFQ.FaVRTABQhX7Ah92j6syLWwRxtAA";
     public static String TOKENTest = "NzYxODY1OTA4NTIzNjMwNjAy.X3g06w.USoHg2GikWHvbq0gS6ofpxU3o1M";
     public static String prefix = "+";
-    public static String rovelprefix = ".";
-    public static String version = "v2.1.4";
+    public static String version = "v2.1.5";
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";

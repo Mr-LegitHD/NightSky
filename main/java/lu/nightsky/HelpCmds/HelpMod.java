@@ -32,7 +32,7 @@ public class HelpMod extends ListenerAdapter {
                 info.setTitle("\uD83D\uDCAD NightSky | Mod Commands");
                 info.addField("**+ban:** ", "+ban <@Member> <Reason>", false);
                 info.addField("**+kick:** ", "+kick <@Member> <Reason>", false);
-                info.addField("**+mute:** ", "+mute <@Member> <Reason> (need @muted role)", false);
+                info.addField("**+mute:** ", "+mute <@Member> <Reason>", false);
                 info.addField("**+unmute:** ", "+unmute <@Member>", false);
                 info.addField("**+clear:** ", "+clear Clear an number of Message", false);
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
