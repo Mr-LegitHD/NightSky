@@ -13,7 +13,9 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Loveship extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
@@ -24,6 +26,18 @@ public class Loveship extends ListenerAdapter {
         final TextChannel channel = event.getChannel();
         if (event.getAuthor().isBot()) return;
         if (args[0].equalsIgnoreCase(Secrets.prefix + "love")) {
+            if (args.length < 2) {
+                event.getMessage().delete().queue();
+                //Embed Builder
+                EmbedBuilder mute = new EmbedBuilder();
+                mute.setTitle("Error");
+                mute.setDescription("Correct Usage: +love <Name> <Name>");
+                mute.setFooter("System");
+                mute.setTimestamp(Instant.now());
+                mute.setColor(Color.RED);
+                event.getChannel().sendMessage(mute.build()).queue(message -> message.delete().queueAfter(3, TimeUnit.SECONDS));
+                mute.clear();
+            } else
 
             WebUtils.ins.getJSONObject("https://apis.duncte123.me/love/"+args[1]+"/"+args[2]).async((json) -> {
                 if (!json.get("success").asBoolean()) {

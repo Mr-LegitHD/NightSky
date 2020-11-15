@@ -26,7 +26,7 @@ public class Vote extends ListenerAdapter {
                 info.setTitle("\uD83D\uDCAD NightSky | Vote");
                 info.setDescription("Support us with a [Vote](https://top.gg/bot/750778627565682798/vote)");
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
-                info.setColor(new Color(14,24,45));
+                info.setColor(new Color(242,134,93));
                 event.getChannel().sendMessage(info.build()).queue();
                 info.clear();
                 event.getMessage().delete().queue();

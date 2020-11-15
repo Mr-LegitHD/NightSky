@@ -2,13 +2,10 @@ package lu.nightsky.Privat;
 
 import lu.nightsky.AdminStuff.Embed;
 import lu.nightsky.AdminStuff.Voting;
-import lu.nightsky.Automod.AntiInvite;
-import lu.nightsky.Automod.Blacklist;
 import lu.nightsky.BotEvents.GuildJoin;
 import lu.nightsky.BotEvents.GuildLeave;
 import lu.nightsky.BotSelf.*;
 import lu.nightsky.Fun.*;
-import lu.nightsky.Musik.*;
 import lu.nightsky.AdminStuff.SayCommand;
 import lu.nightsky.HelpCmds.*;
 import lu.nightsky.Info.*;
@@ -20,7 +17,6 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.requests.GatewayIntent;
-import org.discordbots.api.client.DiscordBotListAPI;
 
 import javax.security.auth.login.LoginException;
 
@@ -29,9 +25,9 @@ public class MainClass {
     public static JDA jda;
 
 
-    public static void main(final String[] args) throws LoginException {
-        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
 
+    public static void main(final String[] args) throws LoginException {
+        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKENTest);
         builder.setAutoReconnect(true);
         builder.setStatus(OnlineStatus.ONLINE);
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Token Login valid ✔️");
@@ -62,9 +58,6 @@ public class MainClass {
         builder.addEventListeners(new HelpAdmin());
         builder.addEventListeners(new HelpFun());
         builder.addEventListeners(new Meme());
-        //builder.addEventListeners(new AntiInvite());
-        //builder.addEventListeners(new HelpAutoMod());
-        //builder.addEventListeners(new Blacklist());
         builder.addEventListeners(new Ticket());
         builder.addEventListeners(new Private());
         builder.addEventListeners(new GuildJoin());
@@ -86,7 +79,6 @@ public class MainClass {
         //  builder.addEventListeners(new Continue());
         builder.addEventListeners(new Shutdown());
         builder.addEventListeners(new Loveship());
-        //builder.addEventListeners(new Instagram());
         builder.addEventListeners(new NightSkyUser());
         builder.addEventListeners(new Couting());
         builder.addEventListeners(new Voting());

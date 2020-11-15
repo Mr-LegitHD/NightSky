@@ -33,7 +33,7 @@ public class SelfInfo extends ListenerAdapter {
                 info.addField("**ID:** ", user.getId(), false);
                 info.addField("**Account Created:** ", user.getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
                 info.addField("**Guild Joined:** ", event.getMember().getTimeJoined().format(DateTimeFormatter.RFC_1123_DATE_TIME), false);
-                info.addField("**Hypesquad:** ", String.valueOf(user.getFlags()), false);
+                info.addField("**Badges:** ", String.valueOf(user.getFlags()), false);
                 info.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                 info.setColor(Color.yellow);
                 event.getChannel().sendMessage(info.build()).queue();

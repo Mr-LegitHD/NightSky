@@ -36,7 +36,12 @@ public class InfosCommand extends ListenerAdapter {
             //Embed Builder
             EmbedBuilder info = new EmbedBuilder();
             info.setTitle("\uD83D\uDCAD NightSky | Informations");
-            info.setDescription("**Bot-Dev**: Mr_Legit HD#3358 \n**Library**: JDA \n**Version**: " + Secrets.version + "\n**Prefix**: + \n**Users**: " + serverUsers + "\n**Servers**: " + event.getJDA().getGuilds().size());
+            info.addField("**Bot-Dev**:","Mr_Legit HD#3358 <:discord_bot_dev:777318867419922462>", true);
+            info.addField("**Library**:","JDA <:java:777318867549683722>", true);
+            info.addField("**Version**:",Secrets.version +" <:online_oxzy:777318867092635739>", true);
+            info.addField("**Prefix**","+", true);
+            info.addField("**Users**:",serverUsers +" <:users_logo:777318867441025044>", true);
+            info.addField("**Servers**:", event.getJDA().getGuilds().size() +"<:Servers:777318867122389013>", true);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             info.setColor(Color.green);
             event.getChannel().sendMessage(info.build()).queue();

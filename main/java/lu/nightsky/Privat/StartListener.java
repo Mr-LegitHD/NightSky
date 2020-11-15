@@ -24,7 +24,6 @@ public class StartListener extends ListenerAdapter {
         Date newDate = new Date();
 
         System.out.println(Secrets.ANSI_CYAN+dateFormat.format(newDate) + " Building NightSky.jar");
-        System.out.println(Secrets.ANSI_CYAN+dateFormat.format(newDate) + " NightSky is on the fallowing Servers:"+Secrets.ANSI_RESET);
         int users = 0;
         for (Guild guild : event.getJDA().getGuilds()) {
             users = users + guild.getMemberCount();

@@ -26,7 +26,7 @@ public class Hosting extends ListenerAdapter {
             info.addField("**Server**","KVM-1", true);
             info.addField("**Memory**","2 GB ECC REG RAM", true);
             info.addField("**CPU**","1x Intel Xeon E5", true);
-            info.addField("**Affilte Link to support us <:cookieboy:775762536128970793> **","[KernelHost](https://www.kernelhost.de/cp/aff.php?aff=9)", true);
+            info.addField("**Affiliate Link to support us <:cookieboy:775762536128970793> **","[KernelHost](https://www.kernelhost.de/cp/aff.php?aff=9)", true);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             info.setColor(new Color(40,143,235));
             event.getChannel().sendMessage(info.build()).queue();
