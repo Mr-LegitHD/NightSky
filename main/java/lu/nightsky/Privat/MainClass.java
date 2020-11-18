@@ -19,6 +19,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import sun.awt.SunToolkit;
 
 import javax.security.auth.login.LoginException;
 
@@ -83,7 +84,7 @@ public class MainClass {
         builder.addEventListeners(new HelpGame());
         builder.addEventListeners(new List());
         builder.build();
-        System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Listener Loading Successful ✔️");
+        System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+"Listener Loading Successful ✔️");
         System.out.println();
 
     }

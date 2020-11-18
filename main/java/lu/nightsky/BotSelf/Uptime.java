@@ -34,10 +34,9 @@ public class Uptime extends ListenerAdapter {
 
             //Embed Builder
             EmbedBuilder info = new EmbedBuilder();
-            info.setTitle("\uD83D\uDCAD NightSky | Profile");
+            info.setTitle("\uD83D\uDCAD NightSky | Uptime");
             info.setDescription("My uptime is "+days+" days "+ hours+" hours, "+minutes+" minutes, "+seconds+" seconds ✅");
             info.setImage("https://i.imgur.com/eMDPymQ.jpg");
-            info.setTitle("Uptime");
             info.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             info.setColor(Color.green);
             event.getChannel().sendMessage(info.build()).queue();
