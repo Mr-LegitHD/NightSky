@@ -23,10 +23,7 @@ public class Userinfo extends ListenerAdapter {
         if (args[0].equalsIgnoreCase(Secrets.prefix + "profile")) {
 
             User user = event.getAuthor();
-
             List<User> mentionedUsers = event.getMessage().getMentionedUsers();
-
-
             if(mentionedUsers.size() > 0) {
                 User userTarget = mentionedUsers.get(0);
                 event.getGuild().retrieveMember(userTarget).queue(member -> {

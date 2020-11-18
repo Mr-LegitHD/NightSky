@@ -2,10 +2,10 @@ package lu.nightsky.Privat;
 
 
 public class Secrets {
-    public static String TOKEN = "NzUwNzc4NjI3NTY1NjgyNzk4.X0_fFQ._ph5uzX9Im6qX4jsTie8gLQHgGI";
+    public static String TOKEN = "NzUwNzc4NjI3NTY1NjgyNzk4.X0_fFQ.3zIef1gTlIn0c6NCbCmsjZqPbjE";
     public static String TOKENTest = "NzYxODY1OTA4NTIzNjMwNjAy.X3g06w.USoHg2GikWHvbq0gS6ofpxU3o1M";
     public static String prefix = "+";
-    public static String version = "v2.1.5";
+    public static String version = "v2.1.7";
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";

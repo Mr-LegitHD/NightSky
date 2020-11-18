@@ -16,7 +16,6 @@ import java.time.Instant;
 import java.util.Date;
 
 public class InfosCommand extends ListenerAdapter {
-    public static JDA jda;
 
 
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {

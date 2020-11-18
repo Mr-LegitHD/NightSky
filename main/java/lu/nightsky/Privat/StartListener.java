@@ -30,25 +30,26 @@ public class StartListener extends ListenerAdapter {
         }
         final int serverUsers = users;
          int serverCount = event.getJDA().getGuilds().size();
-
         //Top.gg
         DiscordBotListAPI api = new DiscordBotListAPI.Builder()
                 .token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MDc3ODYyNzU2NTY4Mjc5OCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA0OTUzMTkxfQ.mHKD_q2R6SngqRs3Mmcp1N1ymiNEe9YQTOqBtbIAZDY")
                 .botId("750778627565682798")
                 .build();
-        api.setStats(serverCount);
-        System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
 
-
+            //System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         Runnable task = () -> {
             event.getJDA().getPresence().setActivity(Activity.watching(event.getJDA().getGuilds().size() + " guilds | +help"));
+            api.setStats(serverCount);
+            //System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             event.getJDA().getPresence().setActivity(Activity.listening("+help | Contact Mr_Legit HD#3358 for help"));
+            api.setStats(serverCount);
+            //System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
         };
 
         executor.scheduleWithFixedDelay(task, 0, 5, TimeUnit.SECONDS);

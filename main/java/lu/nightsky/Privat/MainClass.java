@@ -1,5 +1,6 @@
 package lu.nightsky.Privat;
 
+import io.donatebot.api.DBClient;
 import lu.nightsky.AdminStuff.Embed;
 import lu.nightsky.AdminStuff.Voting;
 import lu.nightsky.BotEvents.GuildJoin;
@@ -7,12 +8,13 @@ import lu.nightsky.BotEvents.GuildLeave;
 import lu.nightsky.BotSelf.*;
 import lu.nightsky.Fun.*;
 import lu.nightsky.AdminStuff.SayCommand;
+import lu.nightsky.Game.HelpGame;
+import lu.nightsky.Game.List;
+import lu.nightsky.Game.Playercount;
 import lu.nightsky.HelpCmds.*;
 import lu.nightsky.Info.*;
 import lu.nightsky.Moderation.*;
-import lu.nightsky.Utilities.Couting;
-import lu.nightsky.Utilities.NightSkyUser;
-import lu.nightsky.Utilities.Ticket;
+import lu.nightsky.Utilities.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -24,10 +26,9 @@ public class MainClass {
     public static JDABuilder builder;
     public static JDA jda;
 
-
-
     public static void main(final String[] args) throws LoginException {
-        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKENTest);
+        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
+        DBClient dbClient = new DBClient("767476859898167377", "5Tjm5ptfEKMPTXPptTrX8zutqjNPm5lyPu8sgGVqYJ4jxngVkcjT2jLmMU4y");
         builder.setAutoReconnect(true);
         builder.setStatus(OnlineStatus.ONLINE);
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Token Login valid ✔️");
@@ -65,25 +66,22 @@ public class MainClass {
         builder.addEventListeners(new GoogleSearch());
         builder.addEventListeners(new SelfInfo());
         builder.addEventListeners(new Uptime());
-        builder.addEventListeners(new Vote());
         builder.addEventListeners(new Joke());
         builder.addEventListeners(new Avatar());
         builder.addEventListeners(new SelfAvatar());
-        //   builder.addEventListeners(new Join());
-        //   builder.addEventListeners(new PlayCommand());
-        //   builder.addEventListeners(new StopCommand());
-        //  builder.addEventListeners(new HelpMusik());
-        //  builder.addEventListeners(new Leave());
-       // builder.addEventListeners(new Skip());
-        // builder.addEventListeners(new Pause());
-        //  builder.addEventListeners(new Continue());
+        builder.addEventListeners(new InviteGenerator());
         builder.addEventListeners(new Shutdown());
         builder.addEventListeners(new Loveship());
         builder.addEventListeners(new NightSkyUser());
         builder.addEventListeners(new Couting());
         builder.addEventListeners(new Voting());
         builder.addEventListeners(new Hosting());
-       // builder.addEventListeners(new Volume());
+        builder.addEventListeners(new TopGGVote());
+        builder.addEventListeners(new BotHelp());
+        builder.addEventListeners(new Donate());
+        builder.addEventListeners(new Playercount());
+        builder.addEventListeners(new HelpGame());
+        builder.addEventListeners(new List());
         builder.build();
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Listener Loading Successful ✔️");
         System.out.println();
