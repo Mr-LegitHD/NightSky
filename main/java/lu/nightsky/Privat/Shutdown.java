@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import javax.tools.JavaCompiler;
 import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -33,6 +34,7 @@ public class Shutdown extends ListenerAdapter {
             info.clear();
             event.getMessage().delete().queue();
             event.getJDA().shutdown();
+            System.exit(0);
             System.out.println(dateFormat.format(newDate) + "Bot Shutdown by " + event.getAuthor().getName());
         }
     }

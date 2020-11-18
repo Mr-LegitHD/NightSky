@@ -37,7 +37,7 @@ public class Playercount extends ListenerAdapter {
                 mute.setFooter("System");
                 mute.setTimestamp(Instant.now());
                 mute.setColor(Color.RED);
-                event.getChannel().sendMessage(mute.build()).queue(message -> message.delete().queueAfter(3, TimeUnit.SECONDS));
+                event.getChannel().sendMessage(mute.build()).queue(message -> message.delete().queueAfter(5, TimeUnit.SECONDS));
                 mute.clear();
                 return;
             }
