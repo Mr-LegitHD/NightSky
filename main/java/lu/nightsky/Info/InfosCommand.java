@@ -3,11 +3,17 @@ package lu.nightsky.Info;
 import lu.nightsky.Privat.Secrets;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.sharding.ShardManager;
+import net.dv8tion.jda.api.utils.SessionController;
+import net.dv8tion.jda.api.utils.cache.CacheView;
+import net.dv8tion.jda.api.utils.cache.ShardCacheView;
+import net.dv8tion.jda.internal.utils.cache.ShardCacheViewImpl;
 
 import java.awt.*;
 import java.text.DateFormat;
@@ -39,8 +45,8 @@ public class InfosCommand extends ListenerAdapter {
             info.addField("**Library**:","JDA <:java:777318867549683722>", true);
             info.addField("**Version**:",Secrets.version +" <:online_oxzy:777318867092635739>", true);
             info.addField("**Prefix**","+", true);
-            info.addField("**Users**:",serverUsers +" <:users_logo:777318867441025044>", true);
-            info.addField("**Servers**:", event.getJDA().getGuilds().size() +"<:Servers:777318867122389013>", true);
+            info.addField("**Users**:","210304"+ "<:users_logo:777318867441025044>", true);
+            info.addField("**Shards**:", "8" +"<:Servers:777318867122389013>", true);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
             info.setColor(Color.green);
             event.getChannel().sendMessage(info.build()).queue();

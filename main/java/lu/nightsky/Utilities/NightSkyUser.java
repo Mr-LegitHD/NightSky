@@ -20,7 +20,12 @@ public class NightSkyUser extends ListenerAdapter {
         DateFormat dateFormat = new SimpleDateFormat("[H:m]");
         Date newDate = new Date();
                 String[] args = event.getMessage().getContentRaw().split("\\s+");
+
                 if (args[0].equalsIgnoreCase(Secrets.prefix + "nightskyuser")) {
+                    if (!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) {
+                        event.getMessage().delete().queue();
+                        return;
+                    }
 
                     Message message = event.getMessage();
                     List<Member> members = message.getMentionedMembers();

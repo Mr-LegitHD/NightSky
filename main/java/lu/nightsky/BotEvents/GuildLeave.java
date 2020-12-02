@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class GuildLeave extends ListenerAdapter {
     public void onGuildLeave(GuildLeaveEvent event) {
@@ -15,6 +16,6 @@ public class GuildLeave extends ListenerAdapter {
         Date newDate = new Date();
         Guild guild = event.getGuild();
 
-        System.out.println(dateFormat.format(newDate) + " Bot left " + guild.getName()+ " by " +guild.getOwner().getUser().getAsTag());
+        System.out.println(dateFormat.format(newDate) + " Bot left " + guild.getName() +" | " +guild.getId());
     }
 }

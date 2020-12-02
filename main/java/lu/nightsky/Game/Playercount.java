@@ -391,9 +391,157 @@ public class Playercount extends ListenerAdapter {
             }
             else
 
-            if (query.equalsIgnoreCase("Hitman2")) {
+            if (query.equalsIgnoreCase("Hitman 2")) {
                 String args1 = args[1];
                 args1 = "863550";
+
+                WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
+
+
+                    final JsonNode response = json.get("response");
+                    final String player_count = response.get("player_count").asText();
+
+                    final EmbedBuilder embed = new EmbedBuilder();
+                    embed.setTitle(query.toUpperCase() + " | Playercount");
+                    embed.setThumbnail("https://i.imgur.com/FHfyM1c.png");
+                    embed.setDescription("**"+query+ "** has currently " + player_count + " online Players. \nAdd a Game? Click [here](https://docs.google.com/forms/d/e/1FAIpQLSdqvZIQOLkm8JyF3-Fkv2EL-YZsWQJTFCJvilKWfQoZHzCPtw/viewform)");
+                    embed.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
+                    embed.setColor(new Color(255, 200, 61));
+                    event.getChannel().sendMessage(embed.build()).queue();
+                    embed.clear();
+                    event.getMessage().delete().queue();
+                    System.out.println(dateFormat.format(newDate) + " Command +playercount got used by " + event.getAuthor().getName());
+                });
+
+            }
+            else
+
+            if (query.equalsIgnoreCase("Call of Duty: Black Ops III")) {
+                String args1 = args[1];
+                args1 = "311210";
+
+                WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
+
+
+                    final JsonNode response = json.get("response");
+                    final String player_count = response.get("player_count").asText();
+
+                    final EmbedBuilder embed = new EmbedBuilder();
+                    embed.setTitle(query.toUpperCase() + " | Playercount");
+                    embed.setThumbnail("https://i.imgur.com/FHfyM1c.png");
+                    embed.setDescription("**"+query+ "** has currently " + player_count + " online Players. \nAdd a Game? Click [here](https://docs.google.com/forms/d/e/1FAIpQLSdqvZIQOLkm8JyF3-Fkv2EL-YZsWQJTFCJvilKWfQoZHzCPtw/viewform)");
+                    embed.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
+                    embed.setColor(new Color(255, 200, 61));
+                    event.getChannel().sendMessage(embed.build()).queue();
+                    embed.clear();
+                    event.getMessage().delete().queue();
+                    System.out.println(dateFormat.format(newDate) + " Command +playercount got used by " + event.getAuthor().getName());
+                });
+
+            }
+            else
+
+            if (query.equalsIgnoreCase("R6")) {
+                String args1 = args[1];
+                args1 = "359550";
+
+                WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
+
+
+                    final JsonNode response = json.get("response");
+                    final String player_count = response.get("player_count").asText();
+
+                    final EmbedBuilder embed = new EmbedBuilder();
+                    embed.setTitle(query.toUpperCase() + " | Playercount");
+                    embed.setThumbnail("https://i.imgur.com/FHfyM1c.png");
+                    embed.setDescription("**"+query+ "** has currently " + player_count + " online Players. \nAdd a Game? Click [here](https://docs.google.com/forms/d/e/1FAIpQLSdqvZIQOLkm8JyF3-Fkv2EL-YZsWQJTFCJvilKWfQoZHzCPtw/viewform)");
+                    embed.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
+                    embed.setColor(new Color(255, 200, 61));
+                    event.getChannel().sendMessage(embed.build()).queue();
+                    embed.clear();
+                    event.getMessage().delete().queue();
+                    System.out.println(dateFormat.format(newDate) + " Command +playercount got used by " + event.getAuthor().getName());
+                });
+
+            }
+            else
+
+            if (query.equalsIgnoreCase("Clustertruck")) {
+                String args1 = args[1];
+                args1 = "397950";
+
+                WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
+
+
+                    final JsonNode response = json.get("response");
+                    final String player_count = response.get("player_count").asText();
+
+                    final EmbedBuilder embed = new EmbedBuilder();
+                    embed.setTitle(query.toUpperCase() + " | Playercount");
+                    embed.setThumbnail("https://i.imgur.com/FHfyM1c.png");
+                    embed.setDescription("**"+query+ "** has currently " + player_count + " online Players. \nAdd a Game? Click [here](https://docs.google.com/forms/d/e/1FAIpQLSdqvZIQOLkm8JyF3-Fkv2EL-YZsWQJTFCJvilKWfQoZHzCPtw/viewform)");
+                    embed.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
+                    embed.setColor(new Color(255, 200, 61));
+                    event.getChannel().sendMessage(embed.build()).queue();
+                    embed.clear();
+                    event.getMessage().delete().queue();
+                    System.out.println(dateFormat.format(newDate) + " Command +playercount got used by " + event.getAuthor().getName());
+                });
+
+            }
+            else
+            if (query.equalsIgnoreCase("World of Tanks Blitz")) {
+                String args1 = args[1];
+                args1 = "444200";
+
+                WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
+
+
+                    final JsonNode response = json.get("response");
+                    final String player_count = response.get("player_count").asText();
+
+                    final EmbedBuilder embed = new EmbedBuilder();
+                    embed.setTitle(query.toUpperCase() + " | Playercount");
+                    embed.setThumbnail("https://i.imgur.com/FHfyM1c.png");
+                    embed.setDescription("**"+query+ "** has currently " + player_count + " online Players. \nAdd a Game? Click [here](https://docs.google.com/forms/d/e/1FAIpQLSdqvZIQOLkm8JyF3-Fkv2EL-YZsWQJTFCJvilKWfQoZHzCPtw/viewform)");
+                    embed.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
+                    embed.setColor(new Color(255, 200, 61));
+                    event.getChannel().sendMessage(embed.build()).queue();
+                    embed.clear();
+                    event.getMessage().delete().queue();
+                    System.out.println(dateFormat.format(newDate) + " Command +playercount got used by " + event.getAuthor().getName());
+                });
+
+            }
+            else
+            if (query.equalsIgnoreCase("World of Tanks Legends")) {
+                String args1 = args[1];
+                args1 = "444200";
+
+                WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
+
+
+                    final JsonNode response = json.get("response");
+                    final String player_count = response.get("player_count").asText();
+
+                    final EmbedBuilder embed = new EmbedBuilder();
+                    embed.setTitle(query.toUpperCase() + " | Playercount");
+                    embed.setThumbnail("https://i.imgur.com/FHfyM1c.png");
+                    embed.setDescription("**"+query+ "** has currently " + player_count + " online Players. \nAdd a Game? Click [here](https://docs.google.com/forms/d/e/1FAIpQLSdqvZIQOLkm8JyF3-Fkv2EL-YZsWQJTFCJvilKWfQoZHzCPtw/viewform)");
+                    embed.setFooter(user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
+                    embed.setColor(new Color(255, 200, 61));
+                    event.getChannel().sendMessage(embed.build()).queue();
+                    embed.clear();
+                    event.getMessage().delete().queue();
+                    System.out.println(dateFormat.format(newDate) + " Command +playercount got used by " + event.getAuthor().getName());
+                });
+
+            }
+            else
+
+            if (query.equalsIgnoreCase("Minecraft Story Mode")) {
+                String args1 = args[1];
+                args1 = "376870";
 
                 WebUtils.ins.getJSONObject("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?format=json&appid=" + args1).async((json) -> {
 

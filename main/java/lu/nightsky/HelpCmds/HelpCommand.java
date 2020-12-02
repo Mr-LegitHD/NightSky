@@ -9,7 +9,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.Date;
 
 public class HelpCommand extends ListenerAdapter {
@@ -29,6 +28,7 @@ public class HelpCommand extends ListenerAdapter {
             info.addField("**+fun help** ","Display all Fun Commands", false);
             info.addField("**+admin help** ","Display all Admin Commands", false);
             info.addField("**+game help** ","Display all Game Commands", false);
+            info.addField("**+music help** ","Display all Music Commands", false);
             info.addField("**+ticket** ","Send a Support Ticket if you found a Bug", false);
             info.setColor(Color.blue);
             info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());

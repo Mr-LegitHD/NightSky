@@ -22,13 +22,7 @@ public class HelpMusik extends ListenerAdapter {
                 //Embed Builder
                 EmbedBuilder info = new EmbedBuilder();
                 info.setTitle("\uD83D\uDCAD NightSky | Music Commands");
-                info.addField("**+join:** ", "Join your current voicechannel", false);
-                info.addField("**+play:** ", "Play music | +play <Songname>", false);
-                info.addField("**+stop:** ", "Stop playing music", false);
-                info.addField("**+leave:** ", "Leave your current voicechannel", false);
-                info.addField("**+skip:** ", "Skip the current song", false);
-                info.addField("**+pause:** ", "Pause the current song", false);
-                info.addField("**+continue:** ", "Continue the current song", false);
+                info.setDescription("Buy the **Premium** Version of the NightSky to get access to the music System \nBuy Premium [here](https://www.patreon.com/nightsky_bot/membership)");
                 info.setFooter( user.getAsTag() + " | NightSky " + Secrets.version, user.getAvatarUrl());
                 info.setColor(Color.blue);
                 event.getChannel().sendMessage(info.build()).queue();

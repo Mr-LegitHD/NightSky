@@ -1,6 +1,7 @@
 package lu.nightsky.Privat;
 
 import io.donatebot.api.DBClient;
+import jdk.nashorn.internal.parser.Token;
 import lu.nightsky.AdminStuff.Embed;
 import lu.nightsky.AdminStuff.Voting;
 import lu.nightsky.BotEvents.GuildJoin;
@@ -19,6 +20,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 import sun.awt.SunToolkit;
 
 import javax.security.auth.login.LoginException;
@@ -28,7 +30,9 @@ public class MainClass {
     public static JDA jda;
 
     public static void main(final String[] args) throws LoginException {
-        final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKENTest);
+        //DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(Secrets.TOKENTest);
+        JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
+        //final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
         DBClient dbClient = new DBClient("767476859898167377", "5Tjm5ptfEKMPTXPptTrX8zutqjNPm5lyPu8sgGVqYJ4jxngVkcjT2jLmMU4y");
         builder.setAutoReconnect(true);
         builder.setStatus(OnlineStatus.ONLINE);
@@ -83,7 +87,13 @@ public class MainClass {
         builder.addEventListeners(new Playercount());
         builder.addEventListeners(new HelpGame());
         builder.addEventListeners(new List());
-        builder.build();
+        builder.addEventListeners(new HelpMusik());
+        builder.addEventListeners(new Warn());
+        for (int i = 0; i < 8; i++)
+        {
+            builder.useSharding(i, 8)
+                    .build();
+        }
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+"Listener Loading Successful ✔️");
         System.out.println();
 

@@ -27,8 +27,8 @@ public class MuteCommand extends ListenerAdapter {
                     TextChannel channel1 = event.getChannel();
                     Member member2 = event.getMember();
                     Member selfMember = event.getGuild().getSelfMember();
-                    if (!selfMember.hasPermission(Permission.MESSAGE_MANAGE)) {
-                        channel1.sendMessage("I need the `Manage Messages` permission for this command").queue();
+                    if (!selfMember.hasPermission(Permission.MANAGE_ROLES)) {
+                        channel1.sendMessage("I need the `Manage Roles` permission for this command").queue();
 
                         return;
                     }
