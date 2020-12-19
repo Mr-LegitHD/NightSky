@@ -21,6 +21,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
+import net.dv8tion.jda.api.utils.SessionController;
 import sun.awt.SunToolkit;
 
 import javax.security.auth.login.LoginException;
@@ -35,6 +36,7 @@ public class MainClass {
         //final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
         DBClient dbClient = new DBClient("767476859898167377", "5Tjm5ptfEKMPTXPptTrX8zutqjNPm5lyPu8sgGVqYJ4jxngVkcjT2jLmMU4y");
         builder.setAutoReconnect(true);
+
         builder.setStatus(OnlineStatus.ONLINE);
         System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Token Login valid ✔️");
 
@@ -88,7 +90,7 @@ public class MainClass {
         builder.addEventListeners(new HelpGame());
         builder.addEventListeners(new List());
         builder.addEventListeners(new HelpMusik());
-        builder.addEventListeners(new Warn());
+
         for (int i = 0; i < 8; i++)
         {
             builder.useSharding(i, 8)

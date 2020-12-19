@@ -31,18 +31,22 @@ public class StartListener extends ListenerAdapter {
             users = users + guild.getMemberCount();
         }
         final int serverUsers = users;
+        final int sharcount = event.getJDA().getShardInfo().getShardTotal();
          int serverCount = event.getJDA().getGuilds().size();
+         int count = event.getJDA().getShardInfo().getShardTotal();
+         int top = 2112;
+        System.out.println(count);
         //Top.gg
         DiscordBotListAPI api = new DiscordBotListAPI.Builder()
-                .token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MDc3ODYyNzU2NTY4Mjc5OCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA0OTUzMTkxfQ.mHKD_q2R6SngqRs3Mmcp1N1ymiNEe9YQTOqBtbIAZDY")
+                .token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MDc3ODYyNzU2NTY4Mjc5OCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA3MTIzNzQwfQ.eIdpRqI0VHUZ_NBkK92Gb1HzQnIKBgNLHSiNoh8e22M")
                 .botId("750778627565682798")
                 .build();
-        api.setStats(3000);
+        api.setStats(top);
 
             //System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
         Runnable task = () -> {
-            event.getJDA().getPresence().setActivity(Activity.watching("2027" + " guilds on 8 shards | +help"));
+            event.getJDA().getPresence().setActivity(Activity.watching("2027" + " guilds on "+sharcount+" shards | +help"));
             //System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
             try {
                 Thread.sleep(5000);

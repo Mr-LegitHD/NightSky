@@ -29,6 +29,7 @@ public class Ticket extends ListenerAdapter {
             channel.sendMessage("Hello, as I see you've found a bug in the NightSky Bot. Please report it here and you might even get a little reward\n" +
                     "\nhttps://forms.gle/DbBYHvpkx5qoeUNd8").queue();
         });
+
         }
     }
-    }
+}
