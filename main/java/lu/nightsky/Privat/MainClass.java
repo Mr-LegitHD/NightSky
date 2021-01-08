@@ -34,7 +34,6 @@ public class MainClass {
         //DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(Secrets.TOKENTest);
         JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
         //final JDABuilder builder = JDABuilder.createDefault(Secrets.TOKEN);
-        DBClient dbClient = new DBClient("767476859898167377", "5Tjm5ptfEKMPTXPptTrX8zutqjNPm5lyPu8sgGVqYJ4jxngVkcjT2jLmMU4y");
         builder.setAutoReconnect(true);
 
         builder.setStatus(OnlineStatus.ONLINE);

@@ -36,12 +36,6 @@ public class StartListener extends ListenerAdapter {
          int count = event.getJDA().getShardInfo().getShardTotal();
          int top = 2112;
         System.out.println(count);
-        //Top.gg
-        DiscordBotListAPI api = new DiscordBotListAPI.Builder()
-                .token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1MDc3ODYyNzU2NTY4Mjc5OCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA3MTIzNzQwfQ.eIdpRqI0VHUZ_NBkK92Gb1HzQnIKBgNLHSiNoh8e22M")
-                .botId("750778627565682798")
-                .build();
-        api.setStats(top);
 
             //System.out.println(Secrets.ANSI_YELLOW+"[Info]"+Secrets.ANSI_RESET+Secrets.ANSI_BLUE+" Reloaded ServerCount on "+Secrets.ANSI_CYAN+"Top.gg"+Secrets.ANSI_RESET+" ✔️");
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
