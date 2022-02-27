@@ -1,8 +1,5 @@
 # NightSky
--  Made with the Love and Java
-	> Privat Discord Bot by Mr_Legit HD
-     Version 2.1.8 
-     Join my Discord Server https://discord.gg/FSYHuHn7Xh
+not updating this anymore
                                     
                                 
 
